@@ -13,6 +13,12 @@ spring:
     generate-ddl: true
   kafka:
     bootstrap-servers: localhost:9092
+    streams:
+      application-id: mail-info-stream-processor
+      bootstrap-servers: localhost:9092
+      properties:
+        default.key.serde: org.apache.kafka.common.serialization.Serdes$StringSerde
+        default.value.serde: org.apache.kafka.common.serialization.Serdes$StringSerde
     consumer:
       group-id: mail-info-collector
       auto-offset-reset: earliest
